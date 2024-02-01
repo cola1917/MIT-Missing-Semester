@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # git log --all --graph --decorate
 # 图形化
 # git log -1 README.md
