@@ -1,0 +1,16 @@
+# 清理git仓库将所有 未跟踪的文件移动到untrack文件夹内
+paper.pdf: paper.tex plot-data.png
+	  pdflatex paper.tex
+
+plot-%.png: %.dat plot.py
+	  ./plot.py -i $*.dat -o $@
+
+.phony: clean
+	clean:
+	  mkdir -p Untrack
+	    rm -f *~ .*~
+	      git ls-files -o | grep -v Untrack | xargs -r mv -u -t Untrack
+
+~$ cat .gitignore
+Untrack
+# 设置git忽略该目录，用来放置untracked文件
