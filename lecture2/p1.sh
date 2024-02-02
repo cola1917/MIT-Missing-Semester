@@ -1,3 +1,4 @@
+#!/bin/bash
 ls -a
 ls -h
 ls -t
