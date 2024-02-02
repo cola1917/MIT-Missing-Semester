@@ -11,5 +11,12 @@ jobs:
           # run shellcheck
           - name: ShellCheck
             uses: ludeeus/action-shellcheck@1.1.0
+    checkmark:
+        runs-on: ubuntu-latest
+        steps:
+          # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+          - uses: actions/checkout@v2
+          # run  Lint Markdown
           - name: Lint Markdown
             uses: tomwhross/write-good-action@v1.6     
+           
